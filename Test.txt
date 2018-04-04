@@ -1,2 +1,2 @@
 We changed this file in class today.
-We also changed it locally...
+We also changed it locally, and we will push it to the server.
