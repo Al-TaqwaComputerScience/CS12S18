@@ -6,6 +6,11 @@ void Avatar::moveAv()
 
 }
 
+bool Avatar::findPath(CoordsW target)
+{
+    return true;
+}
+
 void Avatar::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 
@@ -20,5 +25,5 @@ void Avatar::update(World* world)
 
 bool Avatar::collision(Entity* entity)
 {
-
+    return false;
 }

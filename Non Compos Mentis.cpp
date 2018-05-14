@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include "World.h"
-
+#include "Avatar.h"
 
 
 int main()
@@ -11,6 +11,7 @@ int main()
     world.randomWorld();
 
     //initialize avatar
+    Avatar avatar;
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
@@ -32,20 +33,22 @@ int main()
             {
                 CoordsP mousePos(event.mouseButton.x, event.mouseButton.y);
                 //CoordsW target = screenToWorldCoords(view,mousePos); //************
-                //avatar.findPath(target);//************
+                CoordsW target(event.mouseButton.x - view.getCenter().x - view.getSize().x/2,
+                               event.mouseButton.y - view.getCenter().y - view.getSize().y/2);
+                avatar.findPath(target);//************
             }
         }//event loop ends
 
         //logic
-        //world.updateWorld(avatar.worldPos, 500);
+        world.updateWorld(avatar.worldPos, 500);
 
-        //view.setCenter(avatar.postion.x, avatar.postion.y);
+        view.setCenter(avatar.position.x, avatar.position.y);
 
         //output
         window.setView(view);
         window.clear();
 
-        //world.displayWorld(avatar.worldPos, 500);
+        world.displayWorld(avatar.worldPos, 500);
 
         window.display();
     }//main loop ends

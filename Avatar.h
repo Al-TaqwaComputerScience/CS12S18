@@ -15,6 +15,8 @@ public:
 
     void moveAv();
 
+    bool findPath(CoordsW target);
+
     virtual bool collision(Entity* entity);
 
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;

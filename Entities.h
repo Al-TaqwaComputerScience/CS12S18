@@ -11,6 +11,7 @@ class World;
   public:
 
     CoordsP position;
+    CoordsW worldPos;
     int radius;
 
     //Everything is drawable

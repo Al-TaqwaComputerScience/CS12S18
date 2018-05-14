@@ -22,7 +22,6 @@ public:
     void updateWorld(CoordsW location, int radius);
 
     World();
-
 };
 
 #endif // WORLD_H_INCLUDED

@@ -2,6 +2,9 @@
 #include <math.h>
 #include "Chunk.h"
 #include <queue>
+#ifdef DEBUG
+#include <iostream>
+#endif // DEBUG
 
 World::World()
 {
@@ -18,6 +21,10 @@ void World::randChunkGen(CoordsG location)
         Entity temp;
         temp.position = CoordsP(i,j);
 
+        #ifdef DEBUG
+        std::cout << "Placing entity at " << temp.position.x << "," << temp.position.y << std::endl;
+        #endif // DEBUG
+
         bool intersect = false;
 
         for(auto it = world[location].entities.begin(); it != world[location].entities.end(); it++)
@@ -32,7 +39,13 @@ void World::randChunkGen(CoordsG location)
 
         }
         if (intersect == false)
+        {
             world[location].addEntity(temp);
+            #ifdef DEBUG
+            std::cout << "Successful" << std::endl;
+            #endif // DEBUG
+        }
+
 
     }
 
@@ -97,7 +110,6 @@ void move(Entity& entity)
 }
 void World::randomWorld()
 {
-    Entity entity;
     for(int i = -1; i < 2; i++)
     {
         for(int j = -1; j < 2; j++)
@@ -154,4 +166,5 @@ void World::updateWorld(CoordsW location, int radius)
 
 
 }
+
 

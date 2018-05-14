@@ -411,18 +411,18 @@
 	"Coords.h"
 	"Entities.h"
 
-1526304427 source:c:\users\public\public projects\cs12s18\cs12s18\avatar.cpp
+1526306519 source:c:\users\public\public projects\cs12s18\cs12s18\avatar.cpp
 	"Avatar.h"
 
-1526303462 c:\users\public\public projects\cs12s18\cs12s18\avatar.h
+1526306671 c:\users\public\public projects\cs12s18\cs12s18\avatar.h
 	"Coords.h"
 	"Entities.h"
 	"World.h"
 
-1526304918 c:\users\public\public projects\cs12s18\cs12s18\coords.h
+1526305114 c:\users\public\public projects\cs12s18\cs12s18\coords.h
 	<SFML\GRAPHICS.HPP>
 
-1526303559 c:\users\public\public projects\cs12s18\cs12s18\entities.h
+1526306728 c:\users\public\public projects\cs12s18\cs12s18\entities.h
 	"Coords.h"
 	"animation.h"
 	<SFML\GRAPHICS.HPP>
@@ -431,37 +431,39 @@
 	<vector>
 	<SFML/Graphics.hpp>
 
-1526068872 c:\users\public\public projects\cs12s18\cs12s18\world.h
+1526305854 c:\users\public\public projects\cs12s18\cs12s18\world.h
 	<map>
 	<fstream>
 	"Coords.h"
 	"Chunk.h"
 
-1526304815 c:\users\public\public projects\cs12s18\cs12s18\chunk.h
+1526305114 c:\users\public\public projects\cs12s18\cs12s18\chunk.h
 	"Coords.h"
 	<vector>
 	"Entities.h"
 
-1526304814 source:c:\users\public\public projects\cs12s18\cs12s18\chunk.cpp
+1526305114 source:c:\users\public\public projects\cs12s18\cs12s18\chunk.cpp
 	"Chunk.h"
 
-1526304381 source:c:\users\public\public projects\cs12s18\cs12s18\non compos mentis.cpp
+1526306743 source:c:\users\public\public projects\cs12s18\cs12s18\non compos mentis.cpp
 	<SFML/Graphics.hpp>
 	"World.h"
+	"Avatar.h"
 
-1526304615 source:c:\users\public\public projects\cs12s18\cs12s18\world.cpp
+1526307066 source:c:\users\public\public projects\cs12s18\cs12s18\world.cpp
 	"World.h"
 	<math.h>
 	"Chunk.h"
 	<queue>
+	<iostream>
 
 1526302776 source:c:\users\public\public projects\cs12s18\cs12s18\animation.cpp
 	"animation.h"
 
-1526304598 source:c:\users\public\public projects\cs12s18\cs12s18\entities.cpp
+1526305114 source:c:\users\public\public projects\cs12s18\cs12s18\entities.cpp
 	"entities.h"
 	"Coords.h"
 
-1526304340 source:c:\users\public\public projects\cs12s18\cs12s18\coords.cpp
+1526305114 source:c:\users\public\public projects\cs12s18\cs12s18\coords.cpp
 	"Coords.h"
 
