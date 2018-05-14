@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="c" />
+		<Option title="CS12S18 Final Project" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -49,17 +49,19 @@
 			<Add directory="C:/Program Files (x86)/CodeBlocks/SFML/lib" />
 		</Linker>
 		<Unit filename="Avatar.cpp" />
-		<Unit filename="Avatar.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="Avatar.h" />
 		<Unit filename="Chunk.cpp" />
 		<Unit filename="Chunk.h" />
 		<Unit filename="Coords.h" />
 		<Unit filename="DAMAGING.H" />
 		<Unit filename="Entities.h" />
+		<Unit filename="High Cover.h" />
 		<Unit filename="Light_and_Shadow.h" />
+		<Unit filename="LowCover.h" />
+		<Unit filename="Non Compos Mentis.cpp" />
 		<Unit filename="World.cpp" />
 		<Unit filename="World.h" />
+		<Unit filename="animation.h" />
 		<Unit filename="cb.bmp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
