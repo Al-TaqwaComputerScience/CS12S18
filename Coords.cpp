@@ -11,37 +11,38 @@ Coords::Coords(int x, int y)
     this->y = y;
 }
 
-Coords Coords::operator= (Coords rhs){
+Coords Coords::operator= (const Coords &rhs){
         this->x = rhs.x;
         this->y = rhs.y;
+        return *this;
 }
 
-bool operator == (Coords &lhs, const Coords rhs){
+bool operator == (const Coords &lhs, const Coords &rhs){
     return(lhs.y == rhs.y && lhs.x == rhs.x);
 }
 
-bool operator!=(Coords &lhs, Coords &rhs){
+bool operator!=(const Coords &lhs, const Coords &rhs){
     return !(lhs==rhs);
 }
 
-bool operator < (Coords &lhs, const Coords rhs){
+bool operator < (const Coords &lhs, const Coords& rhs){
     if(lhs.y < rhs.y)
         return true;
-
-    if (lhs.y == rhs.y){
+    else if (lhs.y == rhs.y){
         return lhs.x < rhs.x;
     }
+    else return false;
 }
 
-bool operator <= (Coords &lhs, Coords rhs){
+bool operator <= (const Coords &lhs, const Coords &rhs){
     return (lhs < rhs || lhs == rhs);
 }
 
-bool operator > (Coords &lhs, const Coords rhs){
+bool operator > (const Coords &lhs, const Coords &rhs){
     return !(lhs <= rhs);
 }
 
-bool operator >= (Coords &lhs, const Coords rhs){
+bool operator >= (const Coords &lhs, const Coords &rhs){
     return !(lhs < rhs);
 }
 

@@ -17,6 +17,8 @@ public:
 
     virtual bool collision(Entity* entity);
 
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
+
     enum animationModes {LEFT, RIGHT, IDLE, PICKUP, HIT};
 };
 

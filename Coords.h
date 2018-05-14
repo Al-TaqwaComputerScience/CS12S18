@@ -11,15 +11,15 @@ public:
     Coords();
     Coords(int x, int y);
 
-    Coords operator= (Coords rhs);
+    Coords operator= (const Coords &rhs);
 };
 
-bool operator == (Coords &lhs, const Coords rhs);
-bool operator!=(Coords &lhs, Coords &rhs);
-bool operator > (Coords &lhs, const Coords rhs);
-bool operator < (Coords &coord, const Coords rhs);
-bool operator <= (Coords &lhs, Coords rhs);
-bool operator >= (Coords &lhs, Coords rhs);
+bool operator== (const Coords &lhs, const Coords &rhs);
+bool operator!=(const Coords &lhs, const Coords &rhs);
+bool operator> (const Coords &lhs, const Coords &rhs);
+bool operator< (const Coords &lhs, const Coords &rhs);
+bool operator<= (const Coords &lhs, const Coords &rhs);
+bool operator>= (const Coords &lhs, const Coords &rhs);
 
 //Position based on pixels
 class CoordsP: public Coords{

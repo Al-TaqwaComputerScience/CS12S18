@@ -3,6 +3,11 @@
 #include "Chunk.h"
 #include <queue>
 
+World::World()
+{
+
+}
+
 void World::randChunkGen(CoordsG location)
 {
     while(world[location].entities.size() < 12)
@@ -63,7 +68,7 @@ void World::displayWorld(CoordsW location, int radius)
             CoordsG displayLocation(i,j);
             if(!world.count(displayLocation))
             {
-                world[displayLocation] = Chunk(location);
+                world[displayLocation] = Chunk(displayLocation);
                 randChunkGen(displayLocation);
             }
             for( auto it = world[displayLocation].entities.begin(); it != world[displayLocation].entities.end(); it++ )
@@ -133,10 +138,11 @@ void World::updateWorld(CoordsW location, int radius)
         for (int j = currentChunkLocation.y - steps;
              j <= currentChunkLocation.y + steps; j++)
         {
-            for(auto it = world[displayLocation].entities.begin();
-                it != world[displayLocation].entities.end(); it++ )
+            CoordsG updateLocation(i,j);
+            for(auto it = world[updateLocation].entities.begin();
+                it != world[updateLocation].entities.end(); it++ )
             {
-                update();
+                //it->update(this); // ***********************No system clock yet!***********************
             }
         }
     }

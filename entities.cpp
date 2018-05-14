@@ -18,15 +18,25 @@ Entity::Entity(sf::Sprite sprite, CoordsP position){
     animation = NULL;
 }
 
-void Entity::draw(sf::RenderTarget& target, sf::RenderStates states)const{
-    target.draw(*sprite, states);
-}
-
 void Entity::loadSprite(sf::Sprite& sprite){
     this->sprite = &sprite;
 }
 
 void Entity::setPosition(CoordsP position){
     this->position = position;
+
+}
+
+void Entity::draw(sf::RenderTarget& target, sf::RenderStates states)const{
+    target.draw(*sprite, states);
+}
+
+void Entity::update(sf::Clock clock, World *world)
+{
+
+}
+
+bool Entity::collision(Entity *collider)
+{
 
 }

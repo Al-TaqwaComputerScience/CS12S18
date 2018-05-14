@@ -4,11 +4,14 @@
 #include "animation.h"
 #include <SFML\GRAPHICS.HPP>
 
+class World;
+
  class Entity: public sf::Drawable
  {
   public:
 
     CoordsP position;
+    int radius;
 
     //Everything is drawable
     sf::Sprite* sprite;
