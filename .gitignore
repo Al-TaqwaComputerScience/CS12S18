@@ -1,3 +1,6 @@
+#CodeBlocks Files
+*.depend
+
 # Prerequisites
 *.d
 
