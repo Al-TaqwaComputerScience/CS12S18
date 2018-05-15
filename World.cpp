@@ -20,6 +20,7 @@ void World::randChunkGen(CoordsG location)
 
         Entity temp;
         temp.position = CoordsP(i,j);
+        temp.worldPos = CoordsW(i + location.x*Chunk::size, j + location.y*Chunk::size);
 
         #ifdef DEBUG
         std::cout << "Placing entity at " << temp.position.x << "," << temp.position.y << std::endl;
@@ -46,7 +47,6 @@ void World::randChunkGen(CoordsG location)
             #endif // DEBUG
         }
 
-
     }
 
 
@@ -71,7 +71,13 @@ void World::displayWorld(CoordsW location, int radius)
     currentChunkLocation.x = location.x / Chunk::size;
     currentChunkLocation.y = location.y / Chunk::size;
 
-    int steps = ceil(radius / Chunk::size);
+    #ifdef DEBUG
+    for(auto it=world.begin(); it != world.end(); it++)
+        std::cout << it->first.x << "," << it->first.y << "\t";
+    std::cout << std::endl;
+    #endif // DEBUG
+
+    int steps = ceil((float)radius / (float)Chunk::size);
     for(int i = currentChunkLocation.x - steps;
         i <= currentChunkLocation.x + steps; i++)
     {
@@ -79,11 +85,20 @@ void World::displayWorld(CoordsW location, int radius)
              j <= currentChunkLocation.y + steps; j++)
         {
             CoordsG displayLocation(i,j);
-            if(!world.count(displayLocation))
+            #ifdef DEBUG
+            std::cout << "Displaying chunk: " << i << "," << j << std::endl;
+            #endif // DEBUG
+            if(world.count(displayLocation) == 0)
             {
+                #ifdef DEBUG
+                std::cout << "Chunk not created...creating." << std::endl;
+                #endif // DEBUG
                 world[displayLocation] = Chunk(displayLocation);
                 randChunkGen(displayLocation);
             }
+            #ifdef DEBUG
+            std::cout << "Printing " << world[displayLocation].entities.size() << " entities." << std::endl;
+            #endif // DEBUG
             for( auto it = world[displayLocation].entities.begin(); it != world[displayLocation].entities.end(); it++ )
             {
                 displayQueue.push(&(*it));
@@ -93,7 +108,7 @@ void World::displayWorld(CoordsW location, int radius)
 
     while(!displayQueue.empty())
     {
-        window->draw(*displayQueue.top());
+        window->draw(*(displayQueue.top()));
         displayQueue.pop();
     }
 
@@ -143,7 +158,7 @@ void World::updateWorld(CoordsW location, int radius)
     currentChunkLocation.x = location.x / Chunk::size;
     currentChunkLocation.y = location.y / Chunk::size;
 
-    int steps = ceil(radius / Chunk::size);
+    int steps = ceil((float)radius / (float)Chunk::size);
     for(int i = currentChunkLocation.x - steps;
         i <= currentChunkLocation.x + steps; i++)
     {
@@ -151,6 +166,11 @@ void World::updateWorld(CoordsW location, int radius)
              j <= currentChunkLocation.y + steps; j++)
         {
             CoordsG updateLocation(i,j);
+            if(!world.count(updateLocation))
+            {
+                world[updateLocation] = Chunk(updateLocation);
+                randChunkGen(updateLocation);
+            }
             for(auto it = world[updateLocation].entities.begin();
                 it != world[updateLocation].entities.end(); it++ )
             {

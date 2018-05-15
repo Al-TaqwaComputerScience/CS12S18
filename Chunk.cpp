@@ -12,7 +12,7 @@ Chunk::Chunk(CoordsG location)
     this->location = location;
 }
 
-void Chunk::addEntity(Entity& entity)
+void Chunk::addEntity(Entity entity)
 {
     entities.push_back(entity);
 }

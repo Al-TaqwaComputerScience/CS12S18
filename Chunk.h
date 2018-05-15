@@ -16,7 +16,7 @@ private:
 public:
     Chunk();
     Chunk(CoordsG location);
-    void addEntity(Entity& entity);
+    void addEntity(Entity entity);
 
     //static int getSize();
     //static void setSize(int size);

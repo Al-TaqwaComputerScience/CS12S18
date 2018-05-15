@@ -12,6 +12,8 @@ int main()
 
     //initialize avatar
     Avatar avatar;
+    //temporary fix
+    avatar.worldPos = CoordsW(0,0);
 
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");

@@ -15,7 +15,8 @@ class World;
     int radius;
 
     //Everything is drawable
-    sf::Sprite* sprite;
+    //sf::Sprite* sprite;
+    sf::CircleShape* sprite;
 
     //a 2d array
     Animation* animation;
