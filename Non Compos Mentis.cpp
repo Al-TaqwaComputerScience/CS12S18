@@ -8,15 +8,24 @@ int main()
     //initialize world
     World world;
 
-    world.randomWorld();
+
 
     //initialize avatar
     Avatar avatar;
     //temporary fix
-    avatar.worldPos = CoordsW(0,0);
+    sf::CircleShape avatarCircle(40);
+    avatarCircle.setFillColor(sf::Color::Yellow);
+    avatar.loadGraphic(avatarCircle);
+    avatar.radius = 40;
+    avatar.position = CoordsP(100,100);
+    avatar.worldPos = CoordsW(100,100);
+    world.addEntity(avatar);
+
+
+    world.randomWorld();
 
     // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
+    sf::RenderWindow window(sf::VideoMode(1000, 1000), "SFML window");
     sf::View view;
     world.setWindow(&window);
 	// Start the game loop
@@ -45,6 +54,7 @@ int main()
         world.updateWorld(avatar.worldPos, 500);
 
         view.setCenter(avatar.position.x, avatar.position.y);
+        view.setSize(window.getSize().x, window.getSize().y);
 
         //output
         window.setView(view);

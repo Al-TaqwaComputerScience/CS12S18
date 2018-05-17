@@ -13,12 +13,16 @@ World::World()
 
 void World::randChunkGen(CoordsG location)
 {
-    while(world[location].entities.size() < 12)
+    while(world[location].entities.size() < 5)
     {
         int i = rand()%world[location].size;
         int j = rand()%world[location].size;
 
+        static sf::CircleShape circle(70);
+        circle.setFillColor(sf::Color::Blue);
         Entity temp;
+        temp.loadGraphic(circle);
+        temp.radius = 70;
         temp.position = CoordsP(i,j);
         temp.worldPos = CoordsW(i + location.x*Chunk::size, j + location.y*Chunk::size);
 
@@ -51,6 +55,14 @@ void World::randChunkGen(CoordsG location)
 
 
 }
+
+void World::addEntity(Entity entity)
+{
+    CoordsG gridPos(entity.worldPos.x/Chunk::size, entity.worldPos.y/Chunk::size);
+    world[gridPos].addEntity(entity);
+}
+
+
 void World::displayWorld(CoordsW location, int radius)
 {
     /*

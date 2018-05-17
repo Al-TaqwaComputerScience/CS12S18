@@ -17,6 +17,7 @@ public:
     void displayWorld(CoordsW location, int radius);
     void setWindow(sf::RenderWindow* window);
     void move(Entity& entity);
+    void addEntity(Entity entity);
     void randomWorld();
     void randChunkGen(CoordsG location);
     void updateWorld(CoordsW location, int radius);

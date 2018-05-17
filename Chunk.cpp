@@ -1,10 +1,10 @@
 #include "Chunk.h"
 
-int Chunk::size = 100;
+int Chunk::size = 500;
 
 Chunk::Chunk()
 {
-    //ctor
+    location = CoordsG(0,0);
 }
 
 Chunk::Chunk(CoordsG location)

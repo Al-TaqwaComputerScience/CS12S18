@@ -28,7 +28,10 @@ class World;
 
     Entity(sf::Sprite sprite, CoordsP position);
 
-    void loadSprite(sf::Sprite& sprite);
+    void loadGraphic();
+    void loadGraphic(sf::Sprite& sprite);
+    void loadGraphic(Animation& animation);
+    void loadGraphic(sf::CircleShape& circle);
 
     void setPosition(CoordsP position);
 

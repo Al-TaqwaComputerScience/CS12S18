@@ -8,8 +8,6 @@ Entity::Entity(){
     sprite = NULL;
     passable = true;
     animation = NULL;
-    this->sprite = new sf::CircleShape(10);
-    this->sprite->setFillColor(sf::Color::Blue);
 }
 
 Entity::Entity(sf::Sprite sprite, CoordsP position){
@@ -24,8 +22,19 @@ Entity::Entity(sf::Sprite sprite, CoordsP position){
     animation = NULL;
 }
 
-void Entity::loadSprite(sf::Sprite& sprite){
+void Entity::loadGraphic()
+{
+    this->sprite = new sf::CircleShape(10);
+    this->sprite->setFillColor(sf::Color::Blue);
+}
+
+void Entity::loadGraphic(sf::Sprite& sprite){
     //this->sprite = &sprite;
+}
+
+void Entity::loadGraphic(sf::CircleShape& circle)
+{
+    this->sprite = &circle;
 }
 
 void Entity::setPosition(CoordsP position){
